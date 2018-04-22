@@ -1,221 +1,242 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>XX  装修</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>XX装修</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/slide.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//轮播
+		var t = n = 0, count;
+		$(document).ready(function(){
+			count=$(".banner_list img").length;
+			$(".banner_list img:not(:first-child)").hide();
+			$("#banner i").click(function() {
+				var i = $(this).text() - 1;
+				n = i;
+				if (i >= count) return;
+				$(".banner_list img").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
+				document.getElementById("banner").style.background="";
+				$(this).toggleClass("on");
+				$(this).siblings().removeAttr("class");
+			});
+			t = setInterval("showAuto()", 2500);
+			$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 3000);});
+		})
+
+		function showAuto()
+		{
+			n = n >= (count - 1) ? 0 : ++n;
+			$("#banner i").eq(n).trigger('click');
+		}
+
+        //切换案例
+		function setTab(n){
+            $("#menuboxul > li").removeClass("active");
+            $("#menuboxul > li:eq(" + (n - 1) + ")").addClass("active");
+            $(".con_zzjs").css("display","none");
+            $("#con_zzjs_" + n).css("display","block");
+		}
+	</script>
 </head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo11111</a>
-      </h1>
-      
+    <div class="header">
+        <img src="images/logo.png">
+		<span class="title">XXX装修 宁阳装修领导者!</span>
+		<div class="">
+            <p>家装咨询热线</p>
+            <p>XXX-XXX-XXXXX</p>
+        </div>
+        <img class="foA_Wei_img" src="images/weixin.png">
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
+
+    <!--轮播图-->
+	<div id="banner">
+		<ul class="banner-btn">
+			<i class="on">1</i><i>2</i><i>3</i><i>4</i>
+		</ul>
+		<div class="banner_list">
+			<img src="images/banner1.jpg" alt="轮播图1" />
+			<img src="images/banner2.png" alt="轮播图2" />
+			<img src="images/banner3.jpg" alt="轮播图3" />
+			<img src="images/banner4.jpg" alt="轮播图4" />
+		</div>
+	</div>
+
+    <!--案例展示-->
+    <main class="mat">
+        <div class="mcom_T clearFix">
+            <p class="rf mcom_T1">当前位置：<a href="http://www.mjt-china.com/" style="color:#fff">首页</a> &gt; 装修案例</p>
+            <p class="mcom_T2"><span>装修案例</span>  case</p>
+        </div>
+
+		<div id="menubox">
+			<span><b>案例展示</b> Case shows</span>
+			<ul id="menuboxul">
+				<li id="zzjs1" onclick="setTab(1)" class="active">精装小户型</li> |
+				<li id="zzjs2" onclick="setTab(2)">中式风格</li> |
+				<li id="zzjs3" onclick="setTab(3)">欧美风格</li> |
+				<li id="zzjs4" onclick="setTab(4)">现代风格</li> |
+				<li id="zzjs5" onclick="setTab(5)">其他风格</li>
+			</ul>
+		</div>
+
+        <div class="con_zzjs" id="con_zzjs_1">
+    		<div class="case_style">
+    			<div class="case_image">
+    				<img src="images/xiaohu/p1.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p2.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p3.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p4.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p5.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p6.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p7.png" width="250" height="210" alt="alt信息" />
+    			</div>
+    			<div class="case_image">
+    				<img src="images/xiaohu/p8.jpg" width="250" height="210" alt="alt信息" />
+    			</div>
+    		</div>
+        </div>
+        <div class="con_zzjs" id="con_zzjs_2">
+		    <div class="case_style">
+			<div class="case_image">
+				<img src="images/china/p1.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p2.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p3.png" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p4.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p5.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p6.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p7.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/china/p8.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+		</div>
+        </div>
+        <div class="con_zzjs" id="con_zzjs_3">
+		    <div class="case_style">
+			<div class="case_image">
+				<img src="images/american/p1.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p2.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p3.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p4.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p5.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p6.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p7.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/american/p8.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+		</div>
+        </div>
+        <div class="con_zzjs" id="con_zzjs_4">
+		    <div class="case_style">
+			<div class="case_image">
+				<img src="images/modern/p1.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p2.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p3.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p4.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p5.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p6.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p7.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/modern/p8.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+		</div>
+        </div>
+        <div class="con_zzjs" id="con_zzjs_5">
+		    <div class="case_style">
+			<div class="case_image">
+				<img src="images/qita/p1.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p2.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p3.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p4.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p5.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p6.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p7.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+			<div class="case_image">
+				<img src="images/qita/p8.jpg" width="250" height="210" alt="alt信息" />
+			</div>
+		</div>
+        </div>
+    </main>
+
+    <!--5大承诺-->
+    <div class="promise">
+        <img class="mad_img" src="images/m51.png">
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-test-my-site" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/07/test-my-site/" class="article-date">
-  <time datetime="2018-04-07T08:38:26.000Z" itemprop="datePublished">2018-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/07/test-my-site/">test_my_site</a>
-    </h1>
-  
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
+    <div class="footer">
+        <!-- <div class="foA_box clearFix" style="border-bottom: 1px solid #323232;">
+            <div class="foA_hot lf"> -->
+                <p class="foA_h3">咨询热线：XXX-XXXX-XXXX    联系地址：XX市XX县XX路XX号</p>
+            <!-- </div>
+        </div> -->
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/07/test-my-site/" data-id="cjfq7jl4r0000yov0amjlbmsh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/07/hello-world/" class="article-date">
-  <time datetime="2018-04-07T08:33:13.469Z" itemprop="datePublished">2018-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/04/07/hello-world/" data-id="cjfq7jl510001yov030ix57q9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/04/07/test-my-site/">test_my_site</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/07/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
 </body>
 </html>
