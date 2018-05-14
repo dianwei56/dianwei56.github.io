@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>XX装修</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <style>
+		.main{
+			width: 92%;
+			margin: 0 auto 30px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+		}
+		.content, .side-bar{
+			-webkit-box-flex: 0;
+			-ms-flex-positive: 0;
+			flex-grow: 0;
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+		}
+        .content{
+            width: 70%;
+        }
+        .content > img{
+            width: 100%;
+		}
+		.content > p{
+			margin: 10px 0;
+			line-height: 25px;
+			text-indent: 30px;
+		}
+		.side-bar{
+			width: 20%;
+		}
+
+		.others-title{
+			padding: 10px 0;
+		    font-weight: 600;
+		}
+		.other{
+			padding: 7px 0;
+			border-top: 1px solid #f3f3f3;
+		}
+		.other:hover{
+			cursor: pointer;
+		}
+		.other-info:hover{
+			color: #75C686;
+		}
+    </style>
+	<script type="text/javascript" src="../../js/iconfont.js"></script>
+</head>
+<body>
+	<nav class="nav">
+		<ul class="nav-list">
+			<li class="nav-li nav-info">
+				<a href="http://nyzhuangxiu.top/" title="XX装修">
+					<img src='../../images/logo.png' class="nav-logo" width="222" height="53">
+					<img src='../../images/logo2.png' class="nav-logo2" width="205" height="30">
+				</a>
+			</li>
+			<li class="nav-li nav-about">
+				<span>关于我们<br>About</span>
+				<menu class="nav-menu">
+					<a href="../../about/profile.html" title="公司简介" class="AboutNavMenu6">公司简介</a>
+					<a href="../../about/culture.html" title="企业文化" class="AboutNavMenu6">企业文化</a>
+				</menu>
+			</li>
+			<li class="nav-li nav-concat">
+				<a href="tel:010-123456789">
+					服务热线 : &nbsp;
+					<svg class="icon nav-phone-icon" aria-hidden="true">
+						<use xlink:href="#icon-dianhua"></use>
+					</svg>
+					&nbsp;010-123456789
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="main">
+		<div class="content">
+			<p class="">现代简约风格，将简约大气、雅致内敛表现的淋漓尽致。</p>
+			<img src="../../images/bieshu/21.jpg" alt="主厅" />
+			<p class=""></p>
+			<img src="../../images/bieshu/22.jpg" alt="客厅1" />
+			<p class=""></p>
+			<img src="../../images/bieshu/23.jpg" alt="客厅2" />
+			<p class=""></p>
+			<img src="../../images/bieshu/24.jpg" alt="客厅3" />
+			<p class=""></p>
+		</div>
+		<div class="side-bar">
+			<p class="others-title">其它别墅类型</p>
+			<ul>
+				<li class="other" onclick="anliDetail('1.html')">
+					<img src="../../images/bieshu/11.jpg" width="150" height="120">
+					<p class="other-info">古典风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('3.html')">
+					<img src="../../images/bieshu/31.jpg"  width="150" height="120">
+					<p class="other-info">美式风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('4.html')">
+					<img src="../../images/bieshu/41.jpg"  width="150" height="120">
+					<p class="other-info">日式风格</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="right-bar">
+		<span id="rightBarHide" onClick="showRightBar()" title="展开">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-plus"></use>
+			</svg>
+		</span>
+		<div id="rightScrollBarContent">
+			<div id="close_icon" onClick="hideRightBar()" title="隐藏">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-jianhao1"></use>
+				</svg>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a1" title="返回首页">
+				<a href="http://nyzhuangxiu.top/">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-shouye"></use>
+					</svg>
+					<p style="color: #bbb">返回首页</p>
+				</a>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a2" title="微信扫描二维码">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-iconset0140"></use>
+				</svg>
+				<p style="color: #bbb">二维码</p>
+				<div class="erweima" id="erweima">
+					<img src="../../images/erweima.jpg">
+				</div>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a3" title="在线客服" onclick="orderKefu()">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-qq"></use>
+				</svg>
+				<p style="color: #bbb">在线客服</p>
+			</div>
+			<a class="rightscroll-bar" id="rightScrollBar_a4" href="http://weibo.com/redzest" title="XX装饰新浪官方微博">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xinlangweibo"></use>
+				</svg>
+				<p style="color: #bbb">新浪微博</p>
+			</a>
+			<a class="rightscroll-bar" id="rightScrollBar_a5" href="http://t.qq.com/redzest" title="XX装饰腾讯官方微博">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-tengxunweibo"></use>
+				</svg>
+				<p style="color: #bbb">腾讯微博</p>
+			</a>
+			<a class="rightscroll-bar" id="rightScrollBar_a6" title="返回顶部" href="#">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-icon_zhiding"></use>
+				</svg>
+				<p style="color: #bbb">返回顶部</p>
+			</a>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		//案例 -- 前往其它案例详情页面
+		function anliDetail(href){
+			self.location = href;
+		}
+		
+		//侧边栏 -- 打开和收起
+		var rightScrollBarContent = document.getElementById("rightScrollBarContent");
+		var rightBarHide = document.getElementById("rightBarHide");
+		function showRightBar() {
+			rightScrollBarContent.style.display = 'block';
+			rightBarHide.style.display = 'none';
+		}
+		function hideRightBar() {
+			rightScrollBarContent.style.display = 'none';
+			rightBarHide.style.display = 'block';
+		}
+
+		//侧边栏 -- 在线打开QQ
+		function orderKefu(){
+			window.open('tencent://message/?uin=2507977147&Site=在线客服&Menu=yes');
+		}
+	</script>
+</body>
+</html>

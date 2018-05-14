@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>XX装修</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <style>
+        .main{
+            width: 90%;
+            margin: 10px auto 20px;
+        }
+        .wrap::before{
+            background: url("../images/bg/10.jpg") no-repeat center;
+            background-size: cover;
+            width: 90%;
+            height: 80%;
+            content: "";
+            position: absolute;
+            top: 85;
+            left: 5%;
+            z-index: -1;
+            opacity: .2;
+        }
+        .wrap > p{
+            margin: 10px 0;
+            padding: 0 10px;
+            line-height: 25px;
+            text-indent: 30px;
+        }
+        .flex{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+        	-ms-flex-align: center;
+	        align-items: center;
+        }
+        .img{
+            margin-right: 20px;
+        }
+    </style>
+	<script type="text/javascript" src="../js/iconfont.js"></script>
+</head>
+<body>
+    <!--导航栏-->
+	<nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-li nav-info">
+                <a href="http://nyzhuangxiu.top/" title="XX装修">
+                    <img src='../images/logo.png' class="nav-logo" width="222" height="53">
+                    <img src='../images/logo2.png' class="nav-logo2" width="205" height="30">
+                </a>
+            </li>
+            <li class="nav-li nav-about">
+                <span>关于我们<br>About</span>
+                <menu class="nav-menu">
+                    <a href="profile.html" title="公司简介" class="AboutNavMenu6">公司简介</a>
+                    <a href="#" title="企业文化" class="AboutNavMenu6">企业文化</a>
+                </menu>
+            </li>
+            <li class="nav-li nav-concat">
+                <a href="tel:010-123456789">
+                    服务热线 : &nbsp;
+                    <svg class="icon nav-phone-icon" aria-hidden="true">
+                        <use xlink:href="#icon-dianhua"></use>
+                    </svg>
+                    &nbsp;010-123456789
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="wrap">
+            <p>企业文化是企业在长期经营管理过程中所形成、倡导，并经过筛选提炼而形成的物质文化、行为文化、制度文化和精神文化的总和。优秀的企业文化对内是一种向心力、对外是一面旗帜，是企业应对市场竞争、创建一流企业和打造百年品牌的重要法宝。结合公司发展实际情况，适合我们去推崇的企业文化可总结为八个字：诚信、创新、分享、精进。</p>
+            <p class="flex">
+                <img class="img" src="../images/bg/23.png" width="150" height="165">
+                一、诚信：诚信是为人处事之道，也是企业发展之基。我们倡导所有员工在各自的岗位中，要培养诚实守信、廉洁自律的观念，忠诚自己的职业，信守自己的承诺，履行自己的责任，坚守自己的底线。我们要牢固树立服务顾客的思想，时时处处恪守这一信条：以客为尊、真诚友善、童叟无欺；以客为先、成人达已、贡献社会!</p>
+            <p>二、创新：创新是企业的灵魂所在，是最重要的产品。有了创新，企业才会更具生机与活力，市场嗅觉才会更敏锐，新工艺、新产品、新项目才会层出不穷，从而最大限度地满足市场需要，在激烈的竞争中立于不败之地！这是我们的历史经验，也是未来一直要坚持的法则，需要全体员工积极参与，共同把企业推向行业尖峰地位!</p>
+            <p>三、分享：如果你把快乐告诉一个朋友，将得到两个快乐；如果你把忧愁向一个朋友倾诉，将被分掉一半忧愁。在这个信息大爆炸的时代，是分享让一切变得简单。客户与企业之间的分享，让我们各取所长，共同成长；企业内部员工之间的分享，使我们齐心协力，共铸辉煌！分享会让你更加快乐，让企业充满活力，让世界更加美好！</p>
+            <p>四、精进：精进意味着追求卓越，向善向上，持续努力，直到成功！落实到企业中，就是要以最快的速度，最佳的产品和最好的服务去满足客户，贡献社会，同时实现企业的发展。我们必须“付出不亚于任何人的努力”，不断对我们的产品、技术、质量、服务、管理等各个方面进行改进和完善，才能共同实现这个美好而光荣的梦想！</p>
+        </div>
+    </div>
+
+    <!-- 侧边栏 -->
+	<div class="right-bar">
+        <span id="rightBarHide" onClick="showRightBar()" title="展开">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-plus"></use>
+            </svg>
+        </span>
+        <div id="rightScrollBarContent">
+            <div id="close_icon" onClick="hideRightBar()" title="隐藏">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-jianhao1"></use>
+                </svg>
+            </div>
+            <div class="rightscroll-bar" id="rightScrollBar_a1" title="返回首页">
+                <a href="http://nyzhuangxiu.top/">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shouye"></use>
+                    </svg>
+                    <p style="color: #bbb">返回首页</p>
+                </a>
+            </div>
+            <div class="rightscroll-bar" id="rightScrollBar_a2" title="微信扫描二维码">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-iconset0140"></use>
+                </svg>
+                <p style="color: #bbb">二维码</p>
+                <div class="erweima" id="erweima">
+                    <img src="../images/erweima.jpg">
+                </div>
+            </div>
+            <div class="rightscroll-bar" id="rightScrollBar_a3" title="在线客服" onclick="orderKefu()">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+                <p style="color: #bbb">在线客服</p>
+            </div>
+            <a class="rightscroll-bar" id="rightScrollBar_a4" href="http://weibo.com/redzest" title="XX装饰新浪官方微博">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-xinlangweibo"></use>
+                </svg>
+                <p style="color: #bbb">新浪微博</p>
+            </a>
+            <a class="rightscroll-bar" id="rightScrollBar_a5" href="http://t.qq.com/redzest" title="XX装饰腾讯官方微博">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-tengxunweibo"></use>
+                </svg>
+                <p style="color: #bbb">腾讯微博</p>
+            </a>
+            <a class="rightscroll-bar" id="rightScrollBar_a6" title="返回顶部" href="#">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-icon_zhiding"></use>
+                </svg>
+                <p style="color: #bbb">返回顶部</p>
+            </a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //侧边栏 -- 打开和收起
+        var rightScrollBarContent = document.getElementById("rightScrollBarContent");
+        var rightBarHide = document.getElementById("rightBarHide");
+        function showRightBar() {
+            rightScrollBarContent.style.display = 'block';
+            rightBarHide.style.display = 'none';
+        }
+        function hideRightBar() {
+            rightScrollBarContent.style.display = 'none';
+            rightBarHide.style.display = 'block';
+        }
+
+        //侧边栏 -- 在线打开QQ
+        function orderKefu(){
+            window.open('tencent://message/?uin=2507977147&Site=在线客服&Menu=yes');
+        }
+    </script>
+</body>
+</html>

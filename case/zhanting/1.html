@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>XX装修</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <style>
+        .main{
+			width: 92%;
+			margin: 0 auto 30px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+		}
+		.content, .side-bar{
+			-webkit-box-flex: 0;
+			-ms-flex-positive: 0;
+			flex-grow: 0;
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+		}
+        .content{
+            width: 70%;
+        }
+        .content > img{
+            width: 100%;
+		}
+		.content > p{
+			margin: 10px 0;
+			line-height: 25px;
+			text-indent: 30px;
+		}
+		.side-bar{
+			width: 20%;
+		}
+
+		.others-title{
+			padding: 10px 0;
+		    font-weight: 600;
+		}
+		.other{
+			padding: 7px 0;
+			border-top: 1px solid #f3f3f3;
+		}
+		.other:hover{
+			cursor: pointer;
+		}
+		.other-info:hover{
+			color: #75C686;
+		}
+    </style>
+	<script type="text/javascript" src="../../js/iconfont.js"></script>
+</head>
+<body>
+	<nav class="nav">
+		<ul class="nav-list">
+			<li class="nav-li nav-info">
+				<a href="http://nyzhuangxiu.top/" title="XX装修">
+					<img src='../../images/logo.png' class="nav-logo" width="222" height="53">
+					<img src='../../images/logo2.png' class="nav-logo2" width="205" height="30">
+				</a>
+			</li>
+			<li class="nav-li nav-about">
+				<span>关于我们<br>About</span>
+				<menu class="nav-menu">
+					<a href="../../about/profile.html" title="公司简介" class="AboutNavMenu6">公司简介</a>
+					<a href="../../about/culture.html" title="企业文化" class="AboutNavMenu6">企业文化</a>
+				</menu>
+			</li>
+			<li class="nav-li nav-concat">
+				<a href="tel:010-123456789">
+					服务热线 : &nbsp;
+					<svg class="icon nav-phone-icon" aria-hidden="true">
+						<use xlink:href="#icon-dianhua"></use>
+					</svg>
+					&nbsp;010-123456789
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="main">
+		<div class="content">
+			<p class="">科幻展厅一般多为多媒体科技展厅，是以数字化为主，灯光空间设计显示屏，展现营造极佳体验。</p>
+			<img src="../../images/zhanting/11.jpg" alt="" />
+			<p class="">设计开放空间是外向性的，其特点是周围展带形成呼应和交流，讲究展示空间内容的连续性。这种形式比较活跃，流动感强，四通八达，显得空间面积较大，是设计中常用的一种形式。通过展示突出外露结构形式感的强烈对比，形成一种有独特风格和象征性意义。</p>
+			<img src="../../images/zhanting/12.jpg" alt="" />
+			<p class=""></p>
+			<img src="../../images/zhanting/13.jpg" alt="" />
+			<p class=""></p>
+		</div>
+		<div class="side-bar">
+			<p class="others-title">其它展厅类型</p>
+			<ul>
+				<li class="other" onclick="anliDetail('2.html')">
+					<img src="../../images/zhanting/21.jpg" width="150" height="120">
+					<p class="other-info">古典风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('3.html')">
+					<img src="../../images/zhanting/31.jpg"  width="150" height="120">
+					<p class="other-info">公司展厅</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

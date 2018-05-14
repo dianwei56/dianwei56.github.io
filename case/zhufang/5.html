@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>XX装修</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <style>
+        .main{
+			width: 92%;
+			margin: 0 auto 30px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+		}
+		.content, .side-bar{
+			-webkit-box-flex: 0;
+			-ms-flex-positive: 0;
+			flex-grow: 0;
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+		}
+        .content{
+            width: 70%;
+        }
+        .content > img{
+            width: 100%;
+		}
+		.content > p{
+			margin: 10px 0;
+			line-height: 25px;
+			text-indent: 30px;
+		}
+		.side-bar{
+			width: 20%;
+		}
+
+		.others-title{
+			padding: 10px 0;
+		    font-weight: 600;
+		}
+		.other{
+			padding: 7px 0;
+			border-top: 1px solid #f3f3f3;
+		}
+		.other:hover{
+			cursor: pointer;
+		}
+		.other-info:hover{
+			color: #75C686;
+		}
+    </style>
+	<script type="text/javascript" src="../../js/iconfont.js"></script>
+</head>
+<body>
+	<nav class="nav">
+		<ul class="nav-list">
+			<li class="nav-li nav-info">
+				<a href="http://nyzhuangxiu.top/" title="XX装修">
+					<img src='../../images/logo.png' class="nav-logo" width="222" height="53">
+					<img src='../../images/logo2.png' class="nav-logo2" width="205" height="30">
+				</a>
+			</li>
+			<li class="nav-li nav-about">
+				<span>关于我们<br>About</span>
+				<menu class="nav-menu">
+					<a href="../../about/profile.html" title="公司简介" class="AboutNavMenu6">公司简介</a>
+					<a href="../../about/culture.html" title="企业文化" class="AboutNavMenu6">企业文化</a>
+				</menu>
+			</li>
+			<li class="nav-li nav-concat">
+				<a href="tel:010-123456789">
+					服务热线 : &nbsp;
+					<svg class="icon nav-phone-icon" aria-hidden="true">
+						<use xlink:href="#icon-dianhua"></use>
+					</svg>
+					&nbsp;010-123456789
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="main">
+		<div class="content">
+			<p class="">小户型受限于面积的狭小，在装修空间视觉上，给人一种局限、压迫感，采用开放或半开放式空间手法，可说是最常惯用的设计方式。以打通隔墙的方式来扩展室内空间，形成所谓的一室空间，虽是单一式的格局形状，但分隔各个生活区域及一些私密性的空间，仍是不可忽视的环节之一。如可利用地板高低落差、橱柜、屏风、拉门、天花板等象征手法界定出不同的生活空间。</p>
+			<img src="../../images/zhufang/51.jpg" alt="" />
+			<p class="">色彩与照明的相互运用，也可增加空间感。在色彩上，以单一色系为主调，尽量简洁、明朗、讲求和谐的调性，同时摆放饰品的搭配，不论陈列的方式或色彩，应避免繁重、杂乱无章。照明器具，为免产生室内高度被压缩的反效果，宜采用式样简单、大方，而且是嵌在壁面紧贴天花板的灯具为佳。小户型受面积限制，无法像一般住家有宽裕的空间规划一个独立的储藏室，因而只能从现有的空间取用。</p>
+			<img src="../../images/zhufang/52.jpg" alt="" />
+			<p class="">小户型格局的居室其实不难规划，只要掌握简单、明朗的原则，简化空间机能，再赋予自己的巧思，即能设计出舒适、雅致的小天地。</p>
+			<img src="../../images/zhufang/53.jpg" alt="" />
+			<p class=""></p>
+		</div>
+		<div class="side-bar">
+			<p class="others-title">其它住房类型</p>
+			<ul>
+				<li class="other" onclick="anliDetail('1.html')">
+					<img src="../../images/zhufang/11.jpg"  width="150" height="120">
+					<p class="other-info">古典风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('2.html')">
+					<img src="../../images/zhufang/21.jpg" width="150" height="120">
+					<p class="other-info">现代风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('3.html')">
+					<img src="../../images/zhufang/31.jpg"  width="150" height="120">
+					<p class="other-info">欧美风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('4.html')">
+					<img src="../../images/zhufang/41.jpg"  width="150" height="120">
+					<p class="other-info">地中海风格</p>
+				</li>
+				<li class="other" onclick="anliDetail('6.html')">
+					<img src="../../images/zhufang/61.jpg"  width="150" height="120">
+					<p class="other-info">日式风格</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

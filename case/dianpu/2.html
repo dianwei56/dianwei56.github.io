@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<head>
+	<meta charset="utf-8" />
+	<title>XX装修</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <style>
+        .main{
+			width: 92%;
+			margin: 0 auto 30px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			-webkit-box-align: start;
+			-ms-flex-align: start;
+			align-items: flex-start;
+		}
+		.content, .side-bar{
+			-webkit-box-flex: 0;
+			-ms-flex-positive: 0;
+			flex-grow: 0;
+			-ms-flex-negative: 0;
+			flex-shrink: 0;
+		}
+        .content{
+            width: 70%;
+        }
+        .content > img{
+            width: 100%;
+		}
+		.content > p{
+			margin: 10px 0;
+			line-height: 25px;
+			text-indent: 30px;
+		}
+		.side-bar{
+			width: 20%;
+		}
+
+		.others-title{
+			padding: 10px 0;
+		    font-weight: 600;
+		}
+		.other{
+			padding: 7px 0;
+			border-top: 1px solid #f3f3f3;
+		}
+		.other:hover{
+			cursor: pointer;
+		}
+		.other-info:hover{
+			color: #75C686;
+		}
+    </style>
+	<script type="text/javascript" src="../../js/iconfont.js"></script>
+</head>
+<body>
+	<nav class="nav">
+		<ul class="nav-list">
+			<li class="nav-li nav-info">
+				<a href="http://nyzhuangxiu.top/" title="XX装修">
+					<img src='../../images/logo.png' class="nav-logo" width="222" height="53">
+					<img src='../../images/logo2.png' class="nav-logo2" width="205" height="30">
+				</a>
+			</li>
+			<li class="nav-li nav-about">
+				<span>关于我们<br>About</span>
+				<menu class="nav-menu">
+					<a href="../../about/profile.html" title="公司简介" class="AboutNavMenu6">公司简介</a>
+					<a href="../../about/culture.html" title="企业文化" class="AboutNavMenu6">企业文化</a>
+				</menu>
+			</li>
+			<li class="nav-li nav-concat">
+				<a href="tel:010-123456789">
+					服务热线 : &nbsp;
+					<svg class="icon nav-phone-icon" aria-hidden="true">
+						<use xlink:href="#icon-dianhua"></use>
+					</svg>
+					&nbsp;010-123456789
+				</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="main">
+		<div class="content">
+			<p class="">商场装修风格选择一个高档的商场购物空间，应该是轻松、舒适的物业环境和专柜精致装修风格的组合。最重要的是大方得体。在商场整体风格确定的情况下，做好各个楼层及各个区域的商品种类划分。</p>
+			<img src="../../images/dianpu/21.jpg" alt="" />
+			<p class="">商场装修灯光装饰技巧商场装修中的灯光装饰问题，我们要具体而论，因为商场的产品丰富多样，单调的灯光太过平常，要有所变化，有所凸显。整体来说，商场的灯光不能太亮也不能太暗，在通道那里光线要柔和，不能太过刺眼，而在商品区，就要有所不同了。</p>
+			<img src="../../images/dianpu/22.jpg" alt="" />
+			<p class="">每种商场照明系统都要帮助完成几种功能。它必须吸引顾客光临，将顾客的注意力吸引到出售的商品之上，并创造一种购买欲，以刺激消费，并为顾客和员工在商场内和商场周围的活动提供安全保证。也许这其中最重要的就是要帮助商品以最吸引人的方式体现其价值，同时创造适宜的照明环境。</p>
+			<img src="../../images/dianpu/23.jpg" alt="" />
+			<p class=""></p>
+		</div>
+		<div class="side-bar">
+			<p class="others-title">其它店铺类型</p>
+			<ul>
+				<li class="other" onclick="anliDetail('1.html')">
+					<img src="../../images/dianpu/11.jpg" width="150" height="120">
+					<p class="other-info">餐厅</p>
+				</li>
+				<li class="other" onclick="anliDetail('3.html')">
+					<img src="../../images/dianpu/31.jpg" width="150" height="120">
+					<p class="other-info">酒店</p>
+				</li>
+				<li class="other" onclick="anliDetail('4.html')">
+					<img src="../../images/dianpu/41.jpg"  width="150" height="120">
+					<p class="other-info">超市</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
