@@ -1,242 +1,458 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>XX装修</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/slide.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		//轮播
-		var t = n = 0, count;
-		$(document).ready(function(){
-			count=$(".banner_list img").length;
-			$(".banner_list img:not(:first-child)").hide();
-			$("#banner i").click(function() {
-				var i = $(this).text() - 1;
-				n = i;
-				if (i >= count) return;
-				$(".banner_list img").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(1000);
-				document.getElementById("banner").style.background="";
-				$(this).toggleClass("on");
-				$(this).siblings().removeAttr("class");
-			});
-			t = setInterval("showAuto()", 2500);
-			$("#banner").hover(function(){clearInterval(t)}, function(){t = setInterval("showAuto()", 3000);});
-		})
-
-		function showAuto()
-		{
-			n = n >= (count - 1) ? 0 : ++n;
-			$("#banner i").eq(n).trigger('click');
-		}
-
-        //切换案例
-		function setTab(n){
-            $("#menuboxul > li").removeClass("active");
-            $("#menuboxul > li:eq(" + (n - 1) + ")").addClass("active");
-            $(".con_zzjs").css("display","none");
-            $("#con_zzjs_" + n).css("display","block");
-		}
-	</script>
+	<meta charset="utf-8" />
+	<title>XX装修 - 宁阳装修第一品牌</title>
+	<meta name="description" content="XX装修,宁阳装修第一品牌,专注于宁阳县的装饰装修,同样承接泰安市内其它区县的装修工作.拥有多年丰富经验,在业内有着良好的口碑" />
+	<meta name="keywords" content="宁阳装修,宁阳县装修,泰安装修,泰安市装修,宁阳装饰,泰安装饰" />  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript" src="js/iconfont.js"></script>
 </head>
 <body>
-    <div class="header">
-        <img src="images/logo.png">
-		<span class="title">XXX装修 宁阳装修领导者!</span>
-		<div class="">
-            <p>家装咨询热线</p>
-            <p>XXX-XXX-XXXXX</p>
-        </div>
-        <img class="foA_Wei_img" src="images/weixin.png">
-    </div>
-
-    <!--轮播图-->
-	<div id="banner">
-		<ul class="banner-btn">
-			<i class="on">1</i><i>2</i><i>3</i><i>4</i>
+	<!--导航栏-->
+	<nav class="nav">
+		<ul class="nav-list">
+			<li class="nav-li nav-info">
+				<a href="http://nyzhuangxiu.top/" title="XX装修">
+					<img src='images/logo.png' class="nav-logo" width="222" height="53">
+					<img src='images/logo2.png' class="nav-logo2" width="205" height="30">
+				</a>
+			</li>
+			<li class="nav-li nav-about">
+				<span>关于我们<br>About</span>
+				<menu class="nav-menu">
+					<a href="about/profile.html" title="公司简介" class="AboutNavMenu6">公司简介</a>
+					<a href="about/culture.html" title="企业文化" class="AboutNavMenu6">企业文化</a>
+				</menu>
+			</li>
+			<li class="nav-li nav-concat">
+				<a href="tel:010-123456789">
+					服务热线 : &nbsp;
+					<svg class="icon nav-phone-icon" aria-hidden="true">
+						<use xlink:href="#icon-dianhua"></use>
+					</svg>
+					&nbsp;010-123456789
+				</a>
+			</li>
 		</ul>
-		<div class="banner_list">
-			<img src="images/banner1.jpg" alt="轮播图1" />
-			<img src="images/banner2.png" alt="轮播图2" />
-			<img src="images/banner3.jpg" alt="轮播图3" />
-			<img src="images/banner4.jpg" alt="轮播图4" />
+	</nav>
+
+	<!--轮播图-->
+	<div class="lunbo" id="lunbo_container">
+		<div class="lunbo-imgs" id="lunbo_list" style="left: -1215px;">
+			<img class="lunbo-img" src='images/banner3.jpg' width='1215' height='350'><img class="lunbo-img" src='images/banner1.jpg' width='1215' height='350'><img class="lunbo-img" src='images/banner2.jpg' width='1215' height='350'><img class="lunbo-img" src='images/banner3.jpg' width='1215' height='350'><img class="lunbo-img" src='images/banner1.jpg' width='1215' height='350'>
+		</div>
+		<a href="javascript:;" id="lunbo_prev" class="arrow">&lt;</a>
+		<a href="javascript:;" id="lunbo_next" class="arrow">&gt;</a>
+	</div>
+	
+	<!--案例-->
+	<section class="anli-wrap">
+		<div class="anli-title">
+			<a href="case/index.html" title="精选装修案例">
+				<span class="anli-title-cn">精选案例  &nbsp;</span>
+				<span class="anli-title-en">New Case</span>
+			</a>
+			<menu id="anli_tabs">
+				<span title="住房" onclick="toggleAnli(1)" class="anli-tabactive">住房</span>
+				<span title="办公" onclick="toggleAnli(2)">办公室</span>
+				<span title="店铺" onclick="toggleAnli(3)">店铺/酒店</span>
+				<span title="展厅" onclick="toggleAnli(4)">展厅</span>
+				<span title="别墅" onclick="toggleAnli(5)">别墅</span>
+			</menu>
+		</div>
+		<section class="anli-list anli-active" id="anli_zhufang">
+			<figure class="anli" onclick="anliDetail('case/zhufang/1.html')">
+				<div class="anli-a">
+					<img src="images/zhufang/11.jpg" alt="古典中国风" />
+				</div>
+				<span class="anli-name">古典中国风</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhufang/2.html')">
+				<div class="anli-a">
+					<img src="images/zhufang/21.jpg" alt="现代风格" />
+				</div>
+				<span class="anli-name">现代风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhufang/3.html')">
+				<div class="anli-a">
+					<img src="images/zhufang/31.jpg" alt="欧美风格" />
+				</div>
+				<span class="anli-name">欧美风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhufang/4.html')">
+				<div class="anli-a">
+					<img src="images/zhufang/41.jpg" alt="地中海风格" />
+				</div>
+				<span class="anli-name">地中海风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhufang/5.html')">
+				<div class="anli-a">
+					<img src="images/zhufang/51.jpg" alt="温馨小户型" />
+				</div>
+				<span class="anli-name">温馨小户型</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhufang/6.html')">
+				<div class="anli-a">
+					<img src="images/zhufang/61.jpg" alt="日式风格" />
+				</div>
+				<span class="anli-name">日式风格</span>
+			</figure>
+		</section>
+		<section class="anli-list" id="anli_bangong">
+			<figure class="anli" onclick="anliDetail('case/bangong/1.html')">
+				<div class="anli-a">
+					<img src="images/bangong/11.jpg" width="232" height="170" alt="经理办公室" />
+				</div>
+				<span class="anli-name">经理办公室</span>
+			</figure><figure class="anli" onclick="anliDetail('case/bangong/2.html')">
+				<div class="anli-a">
+					<img src="images/bangong/21.jpg" width="232" height="170" alt="员工办公区" />
+				</div>
+				<span class="anli-name">员工办公区</span>
+			</figure><figure class="anli" onclick="anliDetail('case/bangong/3.html')">
+				<div class="anli-a">
+					<img src="images/bangong/31.jpg" width="232" height="170" alt="休息区" />
+				</div>
+				<span class="anli-name">休息区</span>
+			</figure><figure class="anli" onclick="anliDetail('case/bangong/4.html')">
+				<div class="anli-a">
+					<img src="images/bangong/41.jpg" width="232" height="170" alt="公司前台" />
+				</div>
+				<span class="anli-name">公司前台</span>
+			</figure>
+		</section>
+		<section class="anli-list" id="anli_dianpu">
+			<figure class="anli" onclick="anliDetail('case/dianpu/1.html')">
+				<div class="anli-a">
+					<img src="images/dianpu/11.jpg" width="232" height="170" alt="餐厅" />
+				</div>
+				<span class="anli-name">餐厅</span>
+			</figure><figure class="anli" onclick="anliDetail('case/dianpu/2.html')">
+				<div class="anli-a">
+					<img src="images/dianpu/21.jpg" width="232" height="170" alt="商场" />
+				</div>
+				<span class="anli-name">商场</span>
+			</figure><figure class="anli" onclick="anliDetail('case/dianpu/3.html')">
+				<div class="anli-a">
+					<img src="images/dianpu/31.jpg" width="232" height="170" alt="酒店" />
+				</div>
+				<span class="anli-name">酒店</span>
+			</figure><figure class="anli" onclick="anliDetail('case/dianpu/4.html')">
+				<div class="anli-a">
+					<img src="images/dianpu/41.jpg" width="232" height="170" alt="超市" />
+				</div>
+				<span class="anli-name">超市</span>
+			</figure>
+		</section>
+		<section class="anli-list" id="anli_zhanting">
+			<figure class="anli" onclick="anliDetail('case/zhanting/1.html')">
+				<div class="anli-a">
+					<img src="images/zhanting/11.jpg" width="232" height="170" alt="科幻风格" />
+				</div>
+				<span class="anli-name">科幻风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhanting/2.html')">
+				<div class="anli-a">
+					<img src="images/zhanting/21.jpg" width="232" height="170" alt="古典风格" />
+				</div>
+				<span class="anli-name">古典风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/zhanting/3.html')">
+				<div class="anli-a">
+					<img src="images/zhanting/31.jpg" width="232" height="170" alt="公司展厅" />
+				</div>
+				<span class="anli-name">公司展厅</span>
+			</figure>
+		</section>
+		<section class="anli-list" id="anli_bieshu">
+			<figure class="anli" onclick="anliDetail('case/bieshu/1.html')">
+				<div class="anli-a">
+					<img src="images/bieshu/11.jpg" width="232" height="170" alt="古典中国风" />
+				</div>
+				<span class="anli-name">古典中国风</span>
+			</figure><figure class="anli" onclick="anliDetail('case/bieshu/2.html')">
+				<div class="anli-a">
+					<img src="images/bieshu/21.jpg" width="232" height="170" alt="现代风格" />
+				</div>
+				<span class="anli-name">现代风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/bieshu/3.html')">
+				<div class="anli-a">
+					<img src="images/bieshu/31.jpg" width="232" height="170" alt="美式风格" />
+				</div>
+				<span class="anli-name">美式风格</span>
+			</figure><figure class="anli" onclick="anliDetail('case/bieshu/4.html')">
+				<div class="anli-a">
+					<img src="images/bieshu/41.jpg" width="232" height="170" alt="日式风格" />
+				</div>
+				<span class="anli-name">日式风格</span>
+			</figure>
+		</section>
+	</section>
+	
+	<!-- 品牌 -->
+	<div class="pinpai">
+		<img src="images/pinpai.jpg">
+	</div>
+
+	<!-- 咨讯 -->
+	<section class="zixun">
+		<section class="zixun-wrap" id="zixun1">
+			<div class="zixun-title">
+				<span class="zixun-title-cn">行业资讯</span>
+				<span class="zixun-title-en">Industry News</span>
+			</div>
+			<section class="zixun-a">
+				<dl class="zixun-info">
+					<dt><span class="zixun-date">[04-23]</span> &nbsp;<a href="news/industry_news/1.html" title="2017年互联网家装行业市场规模达2461亿元">
+						2017年互联网家装行业概况</a></dt>
+					<dt><span class="zixun-date">[03-30]</span> &nbsp;<a href="news/industry_news/2.html" title="装修的地域差异">
+						南北方装修有差异</a></dt>
+					<dt><span class="zixun-date">[03-08]</span> &nbsp;<a href="news/industry_news/3.html" title="装修法律法规">
+						装修法律法规</a></dt>
+					<dt><span class="zixun-date">[02-16]</span> &nbsp;<a href="news/industry_news/4.html" title="装修潜规则">
+						装修潜规则，你知道几个?</a></dt>
+					<dt><span class="zixun-date">[10-21]</span> &nbsp;<a href="news/industry_news/5.html" title="智能家居">
+						智能家居未来走向</a></dt>
+				</dl>
+			</section>
+		</section><section class="zixun-wrap" id="zixun2">
+			<div class="zixun-title">
+				<span class="zixun-title-cn">装修知识</span>
+				<span class="zixun-title-en">Decorate Knowledge</span>
+			</div>
+			<section class="zixun-a">
+				<dl class="zixun-info">
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/decorate_knowledge/1.html" title="铺木地板还是铺瓷砖">
+						铺木地板还是铺瓷砖?</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/decorate_knowledge/2.html" title="房屋装修风水 - 这样装修房子才会更旺">
+						房屋装修风水</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/decorate_knowledge/3.html" title="如何挑选瓷砖">
+						如何挑选瓷砖</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/decorate_knowledge/4.html" title="装修的最佳季节">
+						装修的最佳季节</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/decorate_knowledge/5.html" title="家装刷漆常见问题">
+						家装刷漆常见问题</a></dt>
+				</dl>
+			</section>
+		</section><section class="zixun-wrap" id="zixun3">
+			<div class="zixun-title">
+				<span class="zixun-title-cn">绿色装修</span>
+				<span class="zixun-title-en">Green Decoration</span>
+			</div>
+			<section class="zixun-a">
+				<dl class="zixun-info">
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/green_decoration/1.html" title="新房多久可入住">
+						新房多久可入住</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/green_decoration/2.html" title="墙纸选购">
+						墙纸选购</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/green_decoration/3.html" title="绿色设计">
+						绿色设计</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/green_decoration/4.html" title="如何去除甲醛">
+						如何去除甲醛</a></dt>
+					<dt><span class="zixun-date">[10-13]</span> &nbsp;<a href="news/green_decoration/5.html" title="绿色装修的定义">
+						绿色装修的定义</a></dt>
+				</dl>
+			</section>
+		</section>
+	</section>
+	
+	<!-- 关于我们 -->
+	<section class="about">
+		<div class="about-wrap">
+			<div>
+				<span class="about-title-cn">关于我们</span>
+				<span class="about-title-en">About US</span>
+			</div>
+			<p>泰安XX装修是集设计与施工于一体的专业团队，主要承接泰安地区的住房、办公室、厂房、店铺、展厅、酒店、别墅等场所的装修设计及施工。我们拥有经验丰富的施工团队，经过多年... 
+				<a href="about/profile.html"  title="查看完装饰简介">[查看详细]</a>
+			</p>
+		</div>
+	</section>
+
+	<!-- 服务流程 -->
+	<footer class="service">
+		<div class="service-info">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-liucheng"></use>
+			</svg>
+			<span>服务流程<br>Services Flow</span>
+		</div>
+		<p class="service-info">
+			<span class="service-no">1</span>
+			<span>010-123456789<br>装修咨询</span>
+		</p>
+		<p class="service-info">
+			<span class="service-no">2</span>
+			<span>约见设计师<br>上门洽谈设计方案</span>
+		</p>
+		<p class="service-info">
+			<span class="service-no">3</span>
+			<span>确认方案<br>签署装修设计合同</span>
+		</p>
+		<p class="service-info">
+			<span class="service-no">4</span>
+			<span>项目立项<br>进场施工</span>
+		</p>
+		<p class="service-info">
+			<span class="service-no">5</span>
+			<span>严格把控质量<br>满意竣工验收</span>
+		</p>
+	</footer>
+
+	<!-- 友情链接 -->
+	<footer class="link">		
+		<div class="link-info2">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-lianjie"></use>
+			</svg>
+			<span>友情链接<br>Friendship Link</span>
+		</div>
+		<a class="link-info" href="http://www.gov.cn/gongbao/content/2003/content_62197.htm" title="建设部住宅室内装饰装修管理办法">装修规范</a>
+		<a class="link-info" href="http://www.quchujiaquan.cn/" title="去除甲醛的方法">去除甲醛</a>
+		<a class="link-info" href="http://www.china-et.org" title="中国甲醛检测权威认证机构">甲醛检测</a>
+	</footer>
+
+	<!-- 侧边栏 -->
+	<div class="right-bar">
+		<span id="rightBarHide" onClick="showRightBar()" title="展开">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-plus"></use>
+			</svg>
+		</span>
+		<div id="rightScrollBarContent">
+			<div id="close_icon" onClick="hideRightBar()" title="隐藏">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-jianhao1"></use>
+				</svg>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a1" title="返回首页">
+				<a href="http://nyzhuangxiu.top/">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-shouye"></use>
+					</svg>
+					<p style="color: #bbb">返回首页</p>
+				</a>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a2" title="微信扫描二维码">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-iconset0140"></use>
+				</svg>
+				<p style="color: #bbb">二维码</p>
+				<div class="erweima" id="erweima">
+					<img src="images/erweima.jpg">
+				</div>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a3" title="在线客服" onclick="orderKefu()">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-qq"></use>
+				</svg>
+				<p style="color: #bbb">在线客服</p>
+			</div>
+			<!-- <a href="http://wpa.qq.com/msgrd?v=3&uin=2507977147&site=qq&menu=yes" class="qq" title="在线QQ沟通">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-qq"></use>
+				</svg>
+			</a> -->
+			<a class="rightscroll-bar" id="rightScrollBar_a4" href="http://weibo.com/redzest" title="XX装饰新浪官方微博">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xinlangweibo"></use>
+				</svg>
+				<p style="color: #bbb">新浪微博</p>
+			</a>
+			<a class="rightscroll-bar" id="rightScrollBar_a5" href="http://t.qq.com/redzest" title="XX装饰腾讯官方微博">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-tengxunweibo"></use>
+				</svg>
+				<p style="color: #bbb">腾讯微博</p>
+			</a>
+			<a class="rightscroll-bar" id="rightScrollBar_a6" title="返回顶部" href="#">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-icon_zhiding"></use>
+				</svg>
+				<p style="color: #bbb">返回顶部</p>
+			</a>
 		</div>
 	</div>
 
-    <!--案例展示-->
-    <main class="mat">
-        <div class="mcom_T clearFix">
-            <p class="rf mcom_T1">当前位置：<a href="http://www.mjt-china.com/" style="color:#fff">首页</a> &gt; 装修案例</p>
-            <p class="mcom_T2"><span>装修案例</span>  case</p>
-        </div>
+	<script type="text/javascript">
+		//轮播图
+		window.onload = function () {
+            var container = document.getElementById('lunbo_container');
+            var list = document.getElementById('lunbo_list');
+            var prev = document.getElementById('lunbo_prev');
+            var next = document.getElementById('lunbo_next');
+            var index = 1;
+            var timer;
 
-		<div id="menubox">
-			<span><b>案例展示</b> Case shows</span>
-			<ul id="menuboxul">
-				<li id="zzjs1" onclick="setTab(1)" class="active">精装小户型</li> |
-				<li id="zzjs2" onclick="setTab(2)">中式风格</li> |
-				<li id="zzjs3" onclick="setTab(3)">欧美风格</li> |
-				<li id="zzjs4" onclick="setTab(4)">现代风格</li> |
-				<li id="zzjs5" onclick="setTab(5)">其他风格</li>
-			</ul>
-		</div>
+            function animate(offset) {
+                var newLeft = parseInt(list.style.left) + offset;
+                list.style.left = newLeft + 'px';
+                if (newLeft > -1215) {
+                    list.style.left = -3645 + 'px';
+                }
+                if (newLeft < -3645) {
+                    list.style.left = -1215 + 'px';
+                }
+            }
 
-        <div class="con_zzjs" id="con_zzjs_1">
-    		<div class="case_style">
-    			<div class="case_image">
-    				<img src="images/xiaohu/p1.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p2.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p3.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p4.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p5.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p6.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p7.png" width="250" height="210" alt="alt信息" />
-    			</div>
-    			<div class="case_image">
-    				<img src="images/xiaohu/p8.jpg" width="250" height="210" alt="alt信息" />
-    			</div>
-    		</div>
-        </div>
-        <div class="con_zzjs" id="con_zzjs_2">
-		    <div class="case_style">
-			<div class="case_image">
-				<img src="images/china/p1.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p2.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p3.png" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p4.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p5.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p6.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p7.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/china/p8.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-		</div>
-        </div>
-        <div class="con_zzjs" id="con_zzjs_3">
-		    <div class="case_style">
-			<div class="case_image">
-				<img src="images/american/p1.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p2.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p3.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p4.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p5.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p6.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p7.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/american/p8.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-		</div>
-        </div>
-        <div class="con_zzjs" id="con_zzjs_4">
-		    <div class="case_style">
-			<div class="case_image">
-				<img src="images/modern/p1.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p2.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p3.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p4.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p5.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p6.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p7.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/modern/p8.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-		</div>
-        </div>
-        <div class="con_zzjs" id="con_zzjs_5">
-		    <div class="case_style">
-			<div class="case_image">
-				<img src="images/qita/p1.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p2.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p3.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p4.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p5.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p6.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p7.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-			<div class="case_image">
-				<img src="images/qita/p8.jpg" width="250" height="210" alt="alt信息" />
-			</div>
-		</div>
-        </div>
-    </main>
+            function play() {
+                timer = setInterval(function () {
+                    next.onclick();
+                }, 3500)
+            }
 
-    <!--5大承诺-->
-    <div class="promise">
-        <img class="mad_img" src="images/m51.png">
-    </div>
+            function stop() {
+                clearInterval(timer);
+            }
+			
+            prev.onclick = function () {
+                index -= 1;
+                if (index < 1) {
+                    index = 5;
+                }
+                animate(1215);
+            };
 
-    <div class="footer">
-        <!-- <div class="foA_box clearFix" style="border-bottom: 1px solid #323232;">
-            <div class="foA_hot lf"> -->
-                <p class="foA_h3">咨询热线：XXX-XXXX-XXXX    联系地址：XX市XX县XX路XX号</p>
-            <!-- </div>
-        </div> -->
-    </div>
+            next.onclick = function () {
+                index += 1;
+                if (index > 3) {
+                    index = 1;
+                }
+                animate(-1215);
+            };
+			
+            container.onmouseover = stop;
+            container.onmouseout = play;
+            play();
+        }
+
+		//案例 -- 切换案例类型
+		function toggleAnli(n){
+			document.querySelectorAll(".anli-list").forEach(function(value,index){
+				value.classList.remove("anli-active");
+			});
+			document.querySelectorAll("#anli_tabs > span").forEach(function(value,index){
+				value.classList.remove("anli-tabactive");
+			});
+			document.querySelector(".anli-wrap > section:nth-of-type(" + n + ")").classList.add("anli-active");
+			document.querySelector("#anli_tabs > span:nth-of-type(" + n + ")").classList.add("anli-tabactive");
+		}
+		
+		//案例 -- 前往案例详情页面
+		function anliDetail(href){
+			self.location = href;
+		}
+
+		//侧边栏 -- 打开和收起
+		var rightScrollBarContent = document.getElementById("rightScrollBarContent");
+		var rightBarHide = document.getElementById("rightBarHide");
+		function showRightBar() {
+			rightScrollBarContent.style.display = 'block';
+			rightBarHide.style.display = 'none';
+		}
+		function hideRightBar() {
+			rightScrollBarContent.style.display = 'none';
+			rightBarHide.style.display = 'block';
+		}
+
+		//侧边栏 -- 在线打开QQ
+		function orderKefu(){
+			window.open('tencent://message/?uin=2507977147&Site=在线客服&Menu=yes');
+		}
+	</script>
 </body>
 </html>
