@@ -117,9 +117,83 @@
 		</div>
 	</div>
 
+	<div class="right-bar">
+		<span id="rightBarHide" onClick="showRightBar()" title="展开">
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-plus"></use>
+			</svg>
+		</span>
+		<div id="rightScrollBarContent">
+			<div id="close_icon" onClick="hideRightBar()" title="隐藏">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-jianhao1"></use>
+				</svg>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a1" title="返回首页">
+				<a href="http://nyzhuangxiu.top/">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-shouye"></use>
+					</svg>
+					<p style="color: #bbb">返回首页</p>
+				</a>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a2" title="微信扫描二维码">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-iconset0140"></use>
+				</svg>
+				<p style="color: #bbb">二维码</p>
+				<div class="erweima" id="erweima">
+					<img src="../../images/erweima.jpg">
+				</div>
+			</div>
+			<div class="rightscroll-bar" id="rightScrollBar_a3" title="在线客服" onclick="orderKefu()">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-qq"></use>
+				</svg>
+				<p style="color: #bbb">在线客服</p>
+			</div>
+			<a class="rightscroll-bar" id="rightScrollBar_a4" href="http://weibo.com/redzest" title="XX装饰新浪官方微博">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xinlangweibo"></use>
+				</svg>
+				<p style="color: #bbb">新浪微博</p>
+			</a>
+			<a class="rightscroll-bar" id="rightScrollBar_a5" href="http://t.qq.com/redzest" title="XX装饰腾讯官方微博">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-tengxunweibo"></use>
+				</svg>
+				<p style="color: #bbb">腾讯微博</p>
+			</a>
+			<a class="rightscroll-bar" id="rightScrollBar_a6" title="返回顶部" href="#">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-icon_zhiding"></use>
+				</svg>
+				<p style="color: #bbb">返回顶部</p>
+			</a>
+		</div>
+	</div>
+
 	<script type="text/javascript">
-		function anliDetail(addr){
-			self.location = addr;
+		//案例 -- 前往其它案例详情页面
+		function anliDetail(href){
+			self.location = href;
+		}
+		
+		//侧边栏 -- 打开和收起
+		var rightScrollBarContent = document.getElementById("rightScrollBarContent");
+		var rightBarHide = document.getElementById("rightBarHide");
+		function showRightBar() {
+			rightScrollBarContent.style.display = 'block';
+			rightBarHide.style.display = 'none';
+		}
+		function hideRightBar() {
+			rightScrollBarContent.style.display = 'none';
+			rightBarHide.style.display = 'block';
+		}
+
+		//侧边栏 -- 在线打开QQ
+		function orderKefu(){
+			window.open('tencent://message/?uin=2507977147&Site=在线客服&Menu=yes');
 		}
 	</script>
 </body>
