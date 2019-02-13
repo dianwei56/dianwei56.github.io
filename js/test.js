@@ -3,4 +3,3 @@ var str = "";
 for(var i = 0; i < test.length; i++){
     str += test[i];
 }
-console.log(str);
